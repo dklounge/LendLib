@@ -9,9 +9,17 @@
 </body>
 
 <template name="categories">
-  <h2 class="title">my stuff</h2>
+  <h2 class="title">my collections</h2>
   <div id="categories" class="btn-group">
-    {{#each Lists}}
+    {{#if new_cat}}
+      <div class="category">
+        <input type="text" id="add-category" value="" />
+      </div>
+    {{ else }}
+      <div class="category btn btn-inverse" id="btnNewCat">&plus;</div>
+    {{/if}}
+
+    {{#each lists}}
     <div class="category btn btn-inverse">
       {{Category}} <!-- why is this caplitalized? -->
     </div>
